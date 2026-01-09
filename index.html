@@ -1,0 +1,425 @@
+import React, { useState } from 'react';
+import { ArrowRight, MessageSquare, Users, Zap, TrendingUp, CheckCircle, Menu, X, Mail, Phone, Instagram, Send, Star } from 'lucide-react';
+
+const ClosingLabsLanding = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const features = [
+    {
+      icon: <MessageSquare className="w-8 h-8" />,
+      title: "Template Reply WhatsApp",
+      description: "Balas chat pelanggan lebih cepat dengan template siap pakai yang bisa disesuaikan"
+    },
+    {
+      icon: <Send className="w-8 h-8" />,
+      title: "Broadcast Pesan Massal",
+      description: "Kirim promosi ke ratusan kontak sekaligus tanpa ribet dan tanpa spam"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Manajemen Database",
+      description: "Kelola kontak pelanggan dengan rapi, segmentasi mudah untuk targeting tepat"
+    }
+  ];
+
+  const steps = [
+    {
+      number: "01",
+      title: "Pilih Paket",
+      description: "Pilih paket yang sesuai dengan kebutuhan bisnis Anda"
+    },
+    {
+      number: "02",
+      title: "Setup Akun",
+      description: "Hubungkan WhatsApp Business Anda dengan platform kami"
+    },
+    {
+      number: "03",
+      title: "Mulai Closing",
+      description: "Langsung gunakan semua fitur dan tingkatkan penjualan Anda"
+    }
+  ];
+
+  const products = [
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "CRM Sederhana",
+      description: "Lacak interaksi pelanggan dan tingkatkan closing rate dengan follow-up otomatis"
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Template Marketing",
+      description: "Puluhan template pesan marketing yang sudah terbukti efektif"
+    },
+    {
+      icon: <CheckCircle className="w-8 h-8" />,
+      title: "Landing Pages",
+      description: "Buat landing page produk langsung dari WhatsApp"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-teal-800 via-teal-700 to-teal-800 overflow-x-hidden">
+      {/* Decorative Elements */}
+      <div className="fixed top-20 left-10 text-yellow-400 opacity-60 animate-pulse">
+        <Star className="w-8 h-8" fill="currentColor" />
+      </div>
+      <div className="fixed top-40 right-20 text-yellow-400 opacity-60">
+        <div className="text-6xl">+</div>
+      </div>
+      <div className="fixed bottom-40 left-20 text-yellow-400 opacity-60">
+        <Star className="w-6 h-6" fill="currentColor" />
+      </div>
+      <div className="fixed bottom-20 right-40 text-yellow-400 opacity-60 animate-pulse">
+        <div className="text-4xl">+</div>
+      </div>
+
+      {/* Navigation */}
+      <nav className="relative z-50 bg-teal-900/50 backdrop-blur-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center space-x-3">
+              <div className="text-2xl font-bold text-white">
+                ClosingLabs
+              </div>
+            </div>
+            
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#features" className="text-white hover:text-yellow-400 transition font-medium">Fitur</a>
+              <a href="#steps" className="text-white hover:text-yellow-400 transition font-medium">Cara Kerja</a>
+              <a href="#products" className="text-white hover:text-yellow-400 transition font-medium">Produk</a>
+              <a href="#contact" className="text-white hover:text-yellow-400 transition font-medium">Kontak</a>
+              <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-full hover:shadow-lg hover:shadow-orange-500/50 transition font-semibold">
+                Mulai Sekarang
+              </button>
+            </div>
+
+            <button 
+              className="md:hidden text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X /> : <Menu />}
+            </button>
+          </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-teal-900">
+            <div className="px-4 py-4 space-y-3">
+              <a href="#features" className="block text-white hover:text-yellow-400">Fitur</a>
+              <a href="#steps" className="block text-white hover:text-yellow-400">Cara Kerja</a>
+              <a href="#products" className="block text-white hover:text-yellow-400">Produk</a>
+              <a href="#contact" className="block text-white hover:text-yellow-400">Kontak</a>
+              <button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-full">
+                Mulai Sekarang
+              </button>
+            </div>
+          </div>
+        )}
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative pt-12 pb-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-white">
+              <div className="flex items-center space-x-2 mb-4">
+                {[1,2,3,4,5].map((i) => (
+                  <Star key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" />
+                ))}
+                <span className="text-sm ml-2">(4.9 dari 500+ Users)</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                Tingkatkan<br />
+                Penjualan UMKM<br />
+                <span className="text-yellow-400">Melalui WhatsApp</span>
+              </h1>
+
+              <p className="text-xl text-teal-100 mb-8 leading-relaxed border-l-4 border-yellow-400 pl-4">
+                Platform lengkap untuk mengelola chat WhatsApp, broadcast marketing, dan closing pelanggan lebih cepat. Dibuat khusus untuk UMKM Indonesia.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl hover:shadow-orange-500/50 transition transform hover:scale-105 flex items-center justify-center">
+                  Coba Gratis 7 Hari
+                  <ArrowRight className="ml-2" />
+                </button>
+                <button className="bg-white/10 backdrop-blur text-white px-8 py-4 rounded-full font-semibold border-2 border-white hover:bg-white/20 transition">
+                  Lihat Demo
+                </button>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6">
+                <div>
+                  <div className="text-4xl font-bold text-yellow-400 mb-1">500+</div>
+                  <div className="text-sm text-teal-100">UMKM Aktif</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-yellow-400 mb-1">10K+</div>
+                  <div className="text-sm text-teal-100">Chat/Hari</div>
+                </div>
+                <div>
+                  <div className="text-4xl font-bold text-yellow-400 mb-1">3x</div>
+                  <div className="text-sm text-teal-100">Closing Rate</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="relative">
+              <div className="relative z-10">
+                <img 
+                  src="https://i.postimg.cc/dV1fhjcX/image.png" 
+                  alt="Founder"
+                  className="w-full max-w-md mx-auto rounded-3xl"
+                />
+              </div>
+              {/* Decorative blob */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-600/30 rounded-full blur-3xl -z-10"></div>
+            </div>
+          </div>
+        </div>
+
+        {/* Wave Bottom */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="#F3F4F6"/>
+          </svg>
+        </div>
+      </section>
+
+      {/* 3 Reasons Section */}
+      <section id="features" className="relative bg-gray-100 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              3 Alasan Memilih Kami
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <div key={idx} className="relative group">
+                {/* Card with shadow depth */}
+                <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 relative z-10">
+                  <div className="bg-gradient-to-br from-teal-500 to-teal-600 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">{feature.description}</p>
+                  <button className="text-teal-600 font-semibold flex items-center group-hover:text-orange-500 transition">
+                    Pelajari Lebih <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
+                  </button>
+                </div>
+                {/* Decorative line connector */}
+                {idx < 2 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gray-300 z-0"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Steps Section */}
+      <section id="steps" className="relative bg-gray-100 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Ikuti 3 Langkah Sederhana<br />
+              Untuk Bergabung!
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Steps List */}
+            <div className="space-y-6">
+              {steps.map((step, idx) => (
+                <div key={idx} className="flex items-start space-x-6 bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center text-white font-bold text-lg">
+                      {step.number}
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Image */}
+            <div className="relative">
+              <div className="relative z-10 bg-white rounded-3xl shadow-2xl overflow-hidden">
+                <img 
+                  src="https://i.postimg.cc/jjgDJ8Yg/image.png" 
+                  alt="Steps"
+                  className="w-full"
+                />
+              </div>
+              {/* Stats overlay */}
+              <div className="absolute -right-8 top-1/4 bg-white rounded-2xl shadow-xl p-6 z-20">
+                <div className="text-4xl font-bold text-teal-600 mb-1">500+</div>
+                <div className="text-sm text-gray-600">UMKM Bergabung</div>
+              </div>
+              <div className="absolute -right-8 bottom-1/4 bg-white rounded-2xl shadow-xl p-6 z-20">
+                <div className="text-4xl font-bold text-teal-600 mb-1">24 Jam</div>
+                <div className="text-sm text-gray-600">Support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Wave Bottom */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="#0F766E"/>
+          </svg>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section id="products" className="relative bg-teal-700 py-32 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+              Produk Unggulan Kami
+            </h2>
+            <p className="text-xl text-teal-100">
+              Solusi lengkap untuk maksimalkan WhatsApp sebagai mesin penjualan
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {products.map((product, idx) => (
+              <div key={idx} className="bg-white/10 backdrop-blur-lg border-2 border-white/20 rounded-3xl p-8 hover:bg-white/20 transition group">
+                <div className="bg-gradient-to-br from-yellow-400 to-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition">
+                  {product.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">{product.title}</h3>
+                <p className="text-teal-50 leading-relaxed mb-6">{product.description}</p>
+                <button className="text-yellow-400 font-semibold flex items-center group-hover:text-orange-300 transition">
+                  Pelajari Lebih <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative bg-teal-700 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-3xl p-12 text-center shadow-2xl">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              Siap Tingkatkan Penjualan?
+            </h2>
+            <p className="text-xl text-white/90 mb-8">
+              Bergabung dengan 500+ UMKM yang sudah merasakan manfaatnya
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button className="w-full sm:w-auto bg-white text-orange-600 px-10 py-4 rounded-full text-lg font-bold hover:shadow-xl transition transform hover:scale-105">
+                Mulai Gratis 7 Hari
+              </button>
+              <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-white/10 transition">
+                Hubungi Kami
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Wave Bottom */}
+        <div className="absolute bottom-0 left-0 w-full">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 0L60 10C120 20 240 40 360 46.7C480 53 600 47 720 43.3C840 40 960 40 1080 46.7C1200 53 1320 67 1380 73.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V0Z" fill="#1F2937"/>
+          </svg>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="relative bg-gray-800 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+              Hubungi Kami
+            </h2>
+            <p className="text-xl text-gray-400">
+              Tim kami siap membantu Anda memulai
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <a 
+              href="https://wa.me/6281226816221" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-3xl p-8 hover:from-teal-500 hover:to-teal-600 transition text-center group shadow-xl"
+            >
+              <Phone className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition" />
+              <h3 className="text-xl font-bold text-white mb-2">WhatsApp</h3>
+              <p className="text-teal-100">081226816221</p>
+            </a>
+
+            <a 
+              href="mailto:closinglabs@gmail.com"
+              className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-3xl p-8 hover:from-teal-500 hover:to-teal-600 transition text-center group shadow-xl"
+            >
+              <Mail className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition" />
+              <h3 className="text-xl font-bold text-white mb-2">Email</h3>
+              <p className="text-teal-100 break-all text-sm">closinglabs@gmail.com</p>
+            </a>
+
+            <a 
+              href="https://instagram.com/closinglabs.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-3xl p-8 hover:from-teal-500 hover:to-teal-600 transition text-center group shadow-xl"
+            >
+              <Instagram className="w-12 h-12 text-white mx-auto mb-4 group-hover:scale-110 transition" />
+              <h3 className="text-xl font-bold text-white mb-2">Instagram</h3>
+              <p className="text-teal-100">@closinglabs.id</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="mb-4 md:mb-0 text-center md:text-left">
+              <div className="text-2xl font-bold text-white mb-2">
+                ClosingLabs
+              </div>
+              <p className="text-gray-400 text-sm">
+                Tingkatkan Penjualan UMKM Melalui WhatsApp
+              </p>
+            </div>
+
+            <div className="flex items-center space-x-6">
+              <a href="https://instagram.com/closinglabs.id" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition">
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a href="mailto:closinglabs@gmail.com" className="text-gray-400 hover:text-teal-400 transition">
+                <Mail className="w-6 h-6" />
+              </a>
+              <a href="https://wa.me/6281226816221" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-teal-400 transition">
+                <Phone className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+            © 2025 ClosingLabs. All rights reserved.
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default ClosingLabsLanding;
