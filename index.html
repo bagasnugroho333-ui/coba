@@ -5,12 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ClosingLabs — Mesin Closing UMKM</title>
 
-<!-- Tailwind -->
+<!-- Tailwind CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
-
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
 tailwind.config = {
@@ -20,23 +16,36 @@ tailwind.config = {
         primary1: '#2563EB',
         primary2: '#1E40AF',
         dark: '#020617'
+      },
+      backdropBlur: {
+        xs: '2px'
       }
     }
   }
 }
 </script>
+
+<style>
+.glass {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+.glow {
+  box-shadow: 0 0 60px rgba(37,99,235,0.35);
+}
+</style>
 </head>
 
 <body class="bg-white text-dark scroll-smooth">
 
-<!-- ===== NAVBAR ===== -->
-<header class="fixed top-0 w-full bg-white/90 backdrop-blur z-50 border-b">
+<!-- ================= NAVBAR ================= -->
+<header class="fixed top-0 w-full bg-white/80 backdrop-blur z-50 border-b">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     <span class="font-bold text-xl">ClosingLabs</span>
-    <a onclick="trackWA('navbar')"
-       href="https://wa.me/628xxxxxxxxxx?text=Halo%20ClosingLabs,%20saya%20mau%20konsultasi"
-       target="_blank"
-       class="bg-gradient-to-r from-primary1 to-primary2 text-white px-5 py-2 rounded-full text-sm">
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ClosingLabs,%20saya%20mau%20konsultasi"
+       class="bg-gradient-to-r from-primary1 to-primary2 text-white px-5 py-2 rounded-full text-sm hover:scale-105 transition">
        Konsultasi
     </a>
   </div>
@@ -44,105 +53,131 @@ tailwind.config = {
 
 <div class="h-20"></div>
 
-<!-- ===== HERO ===== -->
-<section class="bg-gradient-to-br from-primary1 to-primary2 text-white">
-  <div class="max-w-6xl mx-auto px-6 py-24 text-center" data-aos="fade-up">
-    <h1 class="text-4xl md:text-5xl font-bold mb-6">
-      Landing Page yang Bikin <br class="hidden md:block"> WhatsApp Kamu Bunyi
+<!-- ================= HERO ================= -->
+<section class="relative bg-gradient-to-br from-primary1 to-primary2 text-white overflow-hidden">
+  <div class="absolute -top-20 -right-20 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+
+  <div class="max-w-6xl mx-auto px-6 py-28 text-center relative">
+    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+      Landing Page yang Bikin <br class="hidden md:block">
+      WhatsApp Kamu Bunyi
     </h1>
-    <p class="text-lg opacity-90 mb-10">
-      Bukan sekadar website, tapi mesin closing untuk UMKM & pebisnis online.
+    <p class="text-lg opacity-90 mb-10 max-w-2xl mx-auto">
+      ClosingLabs adalah agency landing page yang fokus membantu UMKM & bisnis online mendapatkan lebih banyak chat dan closing.
     </p>
 
-    <a onclick="trackWA('hero')"
-       href="https://wa.me/628xxxxxxxxxx?text=Halo%20ClosingLabs,%20saya%20mau%20buat%20landing%20page"
-       target="_blank"
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ClosingLabs,%20saya%20mau%20buat%20landing%20page"
        class="inline-block bg-white text-primary1 font-semibold px-10 py-4 rounded-full shadow-xl hover:scale-105 transition">
-       Konsultasi Gratis
+       Konsultasi Gratis via WhatsApp
     </a>
 
     <p class="mt-4 text-sm opacity-80">Tanpa komitmen • Gratis</p>
   </div>
 </section>
 
-<!-- ===== VALUE PROP ===== -->
+<!-- ================= ABOUT / TRUST ================= -->
 <section class="py-20">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-3xl font-bold mb-6">
+        Company Profile ClosingLabs
+      </h2>
+      <p class="opacity-80 leading-relaxed">
+        Kami bukan sekadar web developer. ClosingLabs membangun landing page sebagai
+        <strong>mesin closing</strong> — dirancang khusus agar calon pembeli langsung paham
+        dan terdorong untuk chat WhatsApp kamu.
+      </p>
+    </div>
+
+    <div class="glass rounded-2xl p-8 glow">
+      <ul class="space-y-4 text-white">
+        <li>✅ Fokus WhatsApp Closing</li>
+        <li>✅ Mobile-First Design</li>
+        <li>✅ Copywriting Jualan Halus</li>
+        <li>✅ Siap Dipakai Iklan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VALUE PROP (FUTURISTIC ACCENT) ================= -->
+<section class="bg-dark py-24 text-white">
   <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-3xl font-bold mb-12" data-aos="fade-up">
-      Kenapa ClosingLabs Berbeda?
+    <h2 class="text-3xl font-bold mb-14">
+      Kenapa Banyak Bisnis Pilih ClosingLabs?
     </h2>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="p-8 border rounded-2xl" data-aos="fade-up">
-        🔥 <h3 class="font-semibold text-lg mt-3">Fokus Closing</h3>
-        <p class="opacity-70 mt-2">Kami tidak bikin website pajangan.</p>
+      <div class="glass p-8 rounded-2xl">
+        <h3 class="font-semibold text-lg mb-3">🎯 Fokus Hasil</h3>
+        <p class="opacity-80">Tujuan utama kami cuma satu: bikin chat masuk.</p>
       </div>
-      <div class="p-8 border rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-        📱 <h3 class="font-semibold text-lg mt-3">Mobile First</h3>
-        <p class="opacity-70 mt-2">90% traffic datang dari HP.</p>
+      <div class="glass p-8 rounded-2xl">
+        <h3 class="font-semibold text-lg mb-3">📱 UX Mobile</h3>
+        <p class="opacity-80">90% traffic dari HP, kami optimalkan dari sana.</p>
       </div>
-      <div class="p-8 border rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-        💬 <h3 class="font-semibold text-lg mt-3">WA Oriented</h3>
-        <p class="opacity-70 mt-2">Langsung ke chat, tanpa ribet.</p>
+      <div class="glass p-8 rounded-2xl">
+        <h3 class="font-semibold text-lg mb-3">⚡ Cepat & Ringan</h3>
+        <p class="opacity-80">Loading cepat, tidak ribet, langsung paham.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== GUARANTEE ===== -->
-<section class="bg-black text-white py-20">
-  <div class="max-w-5xl mx-auto px-6 text-center" data-aos="zoom-in">
-    <h2 class="text-3xl font-bold mb-4">Garansi Kepuasan</h2>
-    <p class="opacity-80">
-      Kalau landing page belum sesuai brief, kami revisi sampai siap dipakai.
-    </p>
+<!-- ================= SERVICES ================= -->
+<section class="py-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-14">
+      Layanan ClosingLabs
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="border rounded-2xl p-8">
+        <h3 class="font-semibold text-lg mb-3">Landing Page UMKM</h3>
+        <p class="opacity-70 mb-4">Siap jual, siap closing.</p>
+        <a href="https://wa.me/628XXXXXXXXXX" class="text-primary1 font-semibold">Konsultasi →</a>
+      </div>
+
+      <div class="border rounded-2xl p-8">
+        <h3 class="font-semibold text-lg mb-3">Company Profile</h3>
+        <p class="opacity-70 mb-4">Profil profesional yang tetap bisa jualan.</p>
+        <a href="https://wa.me/628XXXXXXXXXX" class="text-primary1 font-semibold">Konsultasi →</a>
+      </div>
+
+      <div class="border rounded-2xl p-8">
+        <h3 class="font-semibold text-lg mb-3">Template Siap Pakai</h3>
+        <p class="opacity-70 mb-4">Cepat, hemat, efektif.</p>
+        <a href="https://wa.me/628XXXXXXXXXX" class="text-primary1 font-semibold">Konsultasi →</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== CTA FINAL ===== -->
-<section class="bg-gradient-to-r from-primary1 to-primary2 text-white py-24 text-center">
-  <h2 class="text-3xl font-bold mb-6" data-aos="fade-up">
+<!-- ================= FINAL CTA ================= -->
+<section class="bg-gradient-to-r from-primary1 to-primary2 text-white py-28 text-center">
+  <h2 class="text-3xl font-bold mb-6">
     Siap Punya Mesin Closing Sendiri?
   </h2>
-  <p class="opacity-90 mb-10">
-    Klik WhatsApp sekarang. Kami bantu dari nol sampai siap jual.
+  <p class="opacity-90 mb-10 max-w-xl mx-auto">
+    Ceritakan bisnismu sekarang. Kami bantu dari nol sampai siap closing.
   </p>
 
-  <a onclick="trackWA('final')"
-     href="https://wa.me/628xxxxxxxxxx?text=Halo%20ClosingLabs,%20saya%20siap%20buat%20landing%20page"
-     target="_blank"
+  <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20ClosingLabs,%20saya%20siap%20buat%20landing%20page"
      class="bg-white text-primary1 px-10 py-4 rounded-full font-semibold shadow-xl hover:scale-105 transition">
      Mulai Sekarang
   </a>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="bg-black text-white py-8 text-center text-sm opacity-70">
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-white py-10 text-center text-sm opacity-70">
   © 2026 ClosingLabs. All rights reserved.
 </footer>
 
-<!-- ===== FLOATING WA ===== -->
-<a onclick="trackWA('floating')"
-   href="https://wa.me/628xxxxxxxxxx?text=Halo%20ClosingLabs"
-   target="_blank"
+<!-- ================= FLOATING WA ================= -->
+<a href="https://wa.me/628XXXXXXXXXX"
    class="fixed bottom-6 right-6 bg-green-500 text-white px-5 py-4 rounded-full shadow-xl hover:scale-110 transition">
    💬 WhatsApp
 </a>
-
-<!-- ===== SCRIPT ===== -->
-<script>
-AOS.init({ once: true, duration: 800 });
-
-function trackWA(source) {
-  console.log('WA clicked from:', source);
-
-  // Meta Pixel Example
-  // fbq('track', 'Contact', { source });
-
-  // Google Analytics Example
-  // gtag('event', 'click_wa', { event_category: source });
-}
-</script>
 
 </body>
 </html>
