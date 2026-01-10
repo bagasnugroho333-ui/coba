@@ -6,28 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <script src="https://cdn.tailwindcss.com"></script>
-
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* Signature Visual: Glow Effects */
-    .glow-blue {
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    /* 1. Efek Hover Glow untuk Manfaat & Harga */
+    .premium-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    .hover-glow:hover {
-      box-shadow: 0 0 25px rgba(37, 99, 235, 0.5);
-      transform: translateY(-8px);
+    .premium-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+      border-color: rgba(59, 130, 246, 0.5);
     }
+
+    /* 2. Animasi Floating untuk Mockup HP */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(2deg); }
+    }
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* 3. Efek Pulse untuk Tombol */
     .btn-pulse {
-      animation: pulse-blue 2s infinite;
+      animation: pulse-blue 2.5s infinite;
     }
     @keyframes pulse-blue {
-      0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7); }
+      0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.6); }
       70% { box-shadow: 0 0 0 15px rgba(37, 99, 235, 0); }
       100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
     }
+
+    /* 4. Scrollbar Halus */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #020617; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
   </style>
 
   <script>
@@ -42,197 +58,237 @@
   </script>
 </head>
 
-<body class="bg-gradient-to-br from-black via-slate-900 to-blue-950 text-white font-inter">
+<body class="bg-[#020617] text-white font-inter overflow-x-hidden">
 
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-black/70 backdrop-blur border-b border-white/10">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-    <div class="flex items-center gap-2">
-      <img src="path/to/logo.png" alt="ClosingLabs Logo" class="h-10"> <span class="text-2xl font-bold text-blue-500">ClosingLabs</span>
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-black/50 backdrop-blur-md border-b border-white/5">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-4">
+    <div class="flex items-center">
+      <img src="https://i.ibb.co/L9P8P1Z/Closing-Labs-Logo.png" alt="Logo" class="h-8 md:h-10 w-auto object-contain"> 
     </div>
     
-    <div class="hidden md:flex gap-8 text-sm font-medium">
-      <a href="#benefit" class="hover:text-blue-400 transition">Benefit</a>
-      <a href="#paket" class="hover:text-blue-400 transition">Paket</a>
-      <a href="#faq" class="hover:text-blue-400 transition">FAQ</a>
+    <div class="hidden md:flex gap-10 text-sm font-medium tracking-wide">
+      <a href="#benefit" class="hover:text-blue-400 transition-colors">Benefit</a>
+      <a href="#paket" class="hover:text-blue-400 transition-colors">Paket</a>
+      <a href="#faq" class="hover:text-blue-400 transition-colors">FAQ</a>
     </div>
     
-    <a onclick="trackWA('Navbar')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20mau%20tanya%20dulu%20dong..." target="_blank"
-       class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-sm font-bold transition-all glow-blue">
+    <a onclick="trackWA('Navbar')" href="https://wa.me/6281226816221" target="_blank"
+       class="bg-blue-600 hover:bg-blue-700 px-6 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all shadow-lg shadow-blue-600/20">
       Chat Dulu Saja
     </a>
   </div>
 </nav>
 
-<section class="pt-48 pb-24 relative overflow-hidden">
-  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 px-6 items-center">
-    <div data-aos="fade-right">
-      <h1 class="text-5xl md:text-6xl font-extrabold leading-tight">
-        Ubah Traffic Jadi <span class="text-blue-500 italic">Chat WhatsApp</span> yang Siap Closing
+<section class="relative pt-32 md:pt-52 pb-20 md:pb-32 overflow-hidden px-6">
+  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full -mr-40 -mt-20"></div>
+  
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+    <div data-aos="fade-right" data-aos-duration="1200" class="text-center md:text-left">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.15] tracking-tight">
+        Ubah Traffic Jadi <br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 italic">Chat WhatsApp</span> <br>
+        yang Siap Closing
       </h1>
-      <p class="mt-6 text-xl text-gray-300 leading-relaxed">
+      <p class="mt-8 text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl mx-auto md:mx-0">
         Landing page khusus UMKM yang bikin calon pembeli klik → chat → closing, bukan cuma lihat lalu pergi.
       </p>
 
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a onclick="trackWA('Hero')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20mau%20konsultasi%20landing%20page" target="_blank"
-           class="bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-full font-bold text-lg transition-all btn-pulse">
+      <div class="mt-10 flex flex-col md:flex-row gap-5 justify-center md:justify-start">
+        <a onclick="trackWA('Hero')" href="https://wa.me/6281226816221" target="_blank"
+           class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-2xl font-bold text-base transition-all btn-pulse text-center">
           Chat Dulu, Lihat Cocok atau Tidak
         </a>
       </div>
     </div>
 
-    <div data-aos="fade-left" class="relative">
-      <div class="absolute -inset-4 bg-blue-500/20 blur-3xl rounded-full"></div>
-      <img src="https://illustrations.popsy.co/blue/digital-marketing.svg" class="relative w-full max-w-md mx-auto">
+    <div data-aos="fade-up" data-aos-duration="1500" class="relative flex justify-center items-center float-animation">
+      <div class="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full scale-75"></div>
+      
+      <div class="relative w-[280px] md:w-[320px] bg-slate-900 border-[8px] border-slate-800 rounded-[3rem] shadow-2xl overflow-hidden aspect-[9/18.5]">
+        <div class="p-4 space-y-3 pt-10">
+          <div class="h-6 w-24 bg-blue-600/30 rounded-md mb-6"></div>
+          <div class="flex gap-3 items-center p-2 bg-blue-600/10 border border-blue-500/20 rounded-xl">
+            <div class="w-10 h-10 bg-blue-500 rounded-full flex-shrink-0"></div>
+            <div class="space-y-2">
+              <div class="h-2.5 w-24 bg-gray-500 rounded"></div>
+              <div class="h-2 w-32 bg-gray-700 rounded"></div>
+            </div>
+          </div>
+          <div class="flex gap-3 items-center p-2 bg-slate-800/50 rounded-xl">
+            <div class="w-10 h-10 bg-slate-700 rounded-full flex-shrink-0"></div>
+            <div class="space-y-2">
+              <div class="h-2.5 w-24 bg-gray-500 rounded"></div>
+              <div class="h-2 w-32 bg-gray-700 rounded"></div>
+            </div>
+          </div>
+          <div class="flex gap-3 items-center p-2 bg-blue-600/10 border border-blue-500/20 rounded-xl">
+            <div class="w-10 h-10 bg-green-500 rounded-full flex-shrink-0"></div>
+            <div class="space-y-2">
+              <div class="h-2.5 w-24 bg-gray-500 rounded"></div>
+              <div class="h-2 w-32 bg-gray-700 rounded"></div>
+            </div>
+          </div>
+          <div class="flex gap-3 items-center p-2 bg-slate-800/50 rounded-xl opacity-60">
+            <div class="w-10 h-10 bg-slate-700 rounded-full flex-shrink-0"></div>
+            <div class="space-y-2">
+              <div class="h-2.5 w-24 bg-gray-500 rounded"></div>
+              <div class="h-2 w-32 bg-gray-700 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="absolute -right-4 top-20 bg-green-500 text-white px-4 py-2 rounded-2xl text-xs font-bold shadow-xl">
+        Chat Masuk: 99+
+      </div>
+      <div class="absolute -left-8 bottom-32 bg-blue-600 text-white px-4 py-2 rounded-2xl text-xs font-bold shadow-xl">
+        Closing Terdeteksi!
+      </div>
     </div>
   </div>
 </section>
 
-<section id="benefit" class="py-24 bg-white/5 border-y border-white/5">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-16">
-        <h2 class="text-4xl font-extrabold mb-4">Kenapa UMKM Pilih ClosingLabs?</h2>
-        <div class="h-1 w-20 bg-blue-500 mx-auto"></div>
+<section id="benefit" class="py-24 px-6 md:px-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-white">Kenapa UMKM Pilih ClosingLabs?</h2>
+        <div class="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
     </div>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/10" data-aos="fade-up">
-        <div class="text-4xl mb-4">🔗</div>
-        <h4 class="font-bold text-lg mb-2 text-blue-400">Semua Tombol = WhatsApp</h4>
-        <p class="text-gray-400 text-sm">Setiap klik diarahkan ke WhatsApp, bukan ke halaman yang bikin calon pembeli mikir lama.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="premium-card p-8 bg-slate-900/40 rounded-[2.5rem] border border-white/5 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-14 h-14 bg-blue-600/20 text-blue-500 flex items-center justify-center rounded-2xl text-2xl mb-6">🔗</div>
+        <h4 class="font-bold text-xl mb-3">Semua Tombol = WhatsApp</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Setiap klik diarahkan ke WhatsApp, bukan ke halaman yang bikin calon pembeli mikir lama.</p>
       </div>
 
-      <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/10" data-aos="fade-up" data-aos-delay="100">
-        <div class="text-4xl mb-4">✍️</div>
-        <h4 class="font-bold text-lg mb-2 text-blue-400">Sudah Ada Copywriting Penjual</h4>
-        <p class="text-gray-400 text-sm">Kamu nggak perlu mikir kata-kata jualan. Landing page kami sudah disusun untuk mendorong chat & respon.</p>
+      <div class="premium-card p-8 bg-slate-900/40 rounded-[2.5rem] border border-white/5 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-14 h-14 bg-blue-600/20 text-blue-500 flex items-center justify-center rounded-2xl text-2xl mb-6">✍️</div>
+        <h4 class="font-bold text-xl mb-3">Copywriting Penjual</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Landing page disusun untuk mendorong chat & respon cepat dari calon pembeli Anda.</p>
       </div>
 
-      <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/10" data-aos="fade-up" data-aos-delay="200">
-        <div class="text-4xl mb-4">📊</div>
-        <h4 class="font-bold text-lg mb-2 text-blue-400">Bisa Tracking Klik WhatsApp</h4>
-        <p class="text-gray-400 text-sm">Kamu tahu berapa orang yang benar-benar tertarik, bukan cuma lihat angka view di iklan.</p>
+      <div class="premium-card p-8 bg-slate-900/40 rounded-[2.5rem] border border-white/5 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-14 h-14 bg-blue-600/20 text-blue-500 flex items-center justify-center rounded-2xl text-2xl mb-6">📊</div>
+        <h4 class="font-bold text-xl mb-3">Tracking Klik WA</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Ketahui berapa orang yang benar-benar tertarik secara presisi dengan sistem tracking kami.</p>
       </div>
 
-      <div class="p-6 bg-slate-900/50 rounded-2xl border border-white/10" data-aos="fade-up" data-aos-delay="300">
-        <div class="text-4xl mb-4">🎯</div>
-        <h4 class="font-bold text-lg mb-2 text-blue-400">Dibuat untuk Closing, Bukan Pajangan</h4>
-        <p class="text-gray-400 text-sm">Fokus kami satu: bikin orang chat kamu sekarang, bukan nanti apalagi cuma sekedar lihat.</p>
+      <div class="premium-card p-8 bg-slate-900/40 rounded-[2.5rem] border border-white/5 backdrop-blur-sm" data-aos="fade-up" data-aos-delay="400">
+        <div class="w-14 h-14 bg-blue-600/20 text-blue-500 flex items-center justify-center rounded-2xl text-2xl mb-6">🎯</div>
+        <h4 class="font-bold text-xl mb-3">Mesin Closing</h4>
+        <p class="text-gray-400 text-sm leading-relaxed">Fokus kami satu: bikin orang chat kamu sekarang, bukan sekedar lihat pajangan digital.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="paket" class="py-24">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold mb-12">Pilih Amunisi Jualan Kamu</h2>
+<section id="paket" class="py-24 px-6 md:px-10 bg-blue-600/[0.02]">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-16 text-white" data-aos="fade-up">Pilih Amunisi Jualan Kamu</h2>
 
     <div class="grid md:grid-cols-3 gap-8 items-end">
-      <div class="bg-slate-900/40 border border-white/10 rounded-3xl p-8 hover-glow transition-all" data-aos="fade-up">
+      <div class="premium-card bg-slate-900/40 border border-white/5 rounded-[3rem] p-10 text-center" data-aos="fade-up" data-aos-delay="100">
         <h3 class="text-xl font-bold mb-2">Paket Starter</h3>
-        <p class="text-blue-400 text-sm mb-6">Untuk UMKM yang mau mulai dapat chat</p>
-        <ul class="space-y-4 text-sm text-gray-300 mb-8 text-left">
-          <li class="flex items-center gap-2">✅ <span>Landing page 1 halaman</span></li>
-          <li class="flex items-center gap-2">✅ <span>Tombol WA auto chat</span></li>
-          <li class="flex items-center gap-2 text-gray-500">❌ <span>Tanpa tracking</span></li>
-          <li class="flex items-center gap-2 text-gray-500">❌ <span>Tanpa optimasi copy</span></li>
+        <p class="text-blue-400 text-sm mb-8 font-medium italic">Tes Pasar Sekarang</p>
+        <ul class="space-y-5 text-sm text-gray-400 mb-10 text-left">
+          <li class="flex items-center gap-3">✅ <span>1 Halaman Landing Page</span></li>
+          <li class="flex items-center gap-3">✅ <span>Tombol WA Auto Chat</span></li>
+          <li class="flex items-center gap-3 opacity-30">❌ <span>Tanpa Tracking Klik</span></li>
+          <li class="flex items-center gap-3 opacity-30">❌ <span>Tanpa Copywriting Ahli</span></li>
         </ul>
-        <a onclick="trackWA('Paket Starter')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20tertarik%20Paket%20Starter" target="_blank"
-           class="block w-full py-4 rounded-xl border border-blue-500 text-blue-500 font-bold hover:bg-blue-500 hover:text-white transition">
+        <a onclick="trackWA('Paket Starter')" href="https://wa.me/6281226816221" target="_blank"
+           class="block w-full py-4 rounded-2xl border border-blue-600 text-blue-500 font-bold hover:bg-blue-600 hover:text-white transition-all">
           Cocok buat tes pasar
         </a>
       </div>
 
-      <div class="bg-blue-600/10 border-2 border-blue-500 rounded-3xl p-8 hover-glow transition-all scale-105 relative" data-aos="fade-up" data-aos-delay="100">
-        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Paling Banyak Dipilih</div>
-        <h3 class="text-2xl font-bold mb-2 text-blue-400">Paket Bisnis 🔥</h3>
-        <p class="text-gray-300 text-sm mb-6">Paket Paling Banyak Dipilih UMKM</p>
-        <ul class="space-y-4 text-sm text-gray-200 mb-8 text-left">
-          <li class="flex items-center gap-2">✅ <span>Landing page closing</span></li>
-          <li class="flex items-center gap-2 text-blue-400 font-bold">✅ <span>Tracking klik WhatsApp</span></li>
-          <li class="flex items-center gap-2 text-blue-400 font-bold">✅ <span>Copywriting jualan</span></li>
-          <li class="flex items-center gap-2">✅ <span>Optimasi mobile</span></li>
+      <div class="premium-card bg-[#0a1128] border-2 border-blue-500 rounded-[3rem] p-10 relative md:scale-110 z-10 shadow-2xl shadow-blue-500/10" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue-600 text-white px-5 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">PALING POPULER</div>
+        <h3 class="text-2xl font-bold mb-2 text-white">Paket Bisnis 🔥</h3>
+        <p class="text-blue-400 text-sm mb-8 font-medium">Investasi Terbaik UMKM</p>
+        <ul class="space-y-5 text-sm text-gray-200 mb-10 text-left">
+          <li class="flex items-center gap-3">✅ <span>Landing Page Closing High-Res</span></li>
+          <li class="flex items-center gap-3 text-blue-400 font-bold">✅ <span>Tracking Klik WhatsApp</span></li>
+          <li class="flex items-center gap-3 text-blue-400 font-bold">✅ <span>Copywriting Jualan Menjual</span></li>
+          <li class="flex items-center gap-3">✅ <span>Optimasi Mobile Super Cepat</span></li>
         </ul>
-        <a onclick="trackWA('Paket Bisnis')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20tertarik%20Paket%20Bisnis%20yang%20Paling%20Laku" target="_blank"
-           class="block w-full py-4 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition btn-pulse shadow-lg shadow-blue-500/50">
+        <a onclick="trackWA('Paket Bisnis')" href="https://wa.me/6281226816221" target="_blank"
+           class="block w-full py-4 rounded-2xl bg-blue-600 text-white font-black transition-all btn-pulse shadow-xl shadow-blue-600/30">
           Buat kamu yang mau chat masuk tiap hari
         </a>
       </div>
 
-      <div class="bg-slate-900/40 border border-white/10 rounded-3xl p-8 hover-glow transition-all" data-aos="fade-up" data-aos-delay="200">
+      <div class="premium-card bg-slate-900/40 border border-white/5 rounded-[3rem] p-10 text-center" data-aos="fade-up" data-aos-delay="300">
         <h3 class="text-xl font-bold mb-2">Paket Premium</h3>
-        <p class="text-blue-400 text-sm mb-6">Untuk Brand yang Mau Scale</p>
-        <ul class="space-y-4 text-sm text-gray-300 mb-8 text-left">
-          <li class="flex items-center gap-2 text-blue-400 font-bold">✅ <span>Custom design</span></li>
-          <li class="flex items-center gap-2">✅ <span>Funnel WhatsApp</span></li>
-          <li class="flex items-center gap-2">✅ <span>Optimasi conversion</span></li>
-          <li class="flex items-center gap-2">✅ <span>Support lanjutan</span></li>
+        <p class="text-blue-400 text-sm mb-8 font-medium italic">Go Professional</p>
+        <ul class="space-y-5 text-sm text-gray-400 mb-10 text-left">
+          <li class="flex items-center gap-3 text-blue-400 font-bold">✅ <span>Desain Custom Exclusive</span></li>
+          <li class="flex items-center gap-3">✅ <span>Sistem Funnel WhatsApp</span></li>
+          <li class="flex items-center gap-3">✅ <span>Optimasi Konversi Maksimal</span></li>
+          <li class="flex items-center gap-3">✅ <span>Prioritas Support</span></li>
         </ul>
-        <a onclick="trackWA('Paket Premium')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20tertarik%20Paket%20Premium" target="_blank"
-           class="block w-full py-4 rounded-xl border border-blue-500 text-blue-500 font-bold hover:bg-blue-500 hover:text-white transition">
-          Untuk bisnis yang serius grow
+        <a onclick="trackWA('Paket Premium')" href="https://wa.me/6281226816221" target="_blank"
+           class="block w-full py-4 rounded-2xl border border-blue-600 text-blue-500 font-bold hover:bg-blue-600 hover:text-white transition-all">
+          Bisnis yang Serius Grow
         </a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="faq" class="py-24 bg-black/40">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Menjawab Keraguan Kamu</h2>
-
-    <div class="space-y-4">
-      <details class="group border border-white/10 rounded-2xl p-6 transition-all duration-300 bg-white/5 open:bg-white/10">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
+<section id="faq" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-extrabold text-center mb-12">Menjawab Keraguan Kamu</h2>
+    <div class="space-y-5">
+      <details class="group bg-slate-900/50 border border-white/5 rounded-[2rem] p-8 cursor-pointer transition-all">
+        <summary class="font-bold flex justify-between items-center list-none">
           ❓ “Kalau saya nggak paham digital marketing?”
-          <span class="group-open:rotate-180 transition-transform">▼</span>
+          <span class="text-blue-500 group-open:rotate-180 transition-transform">▼</span>
         </summary>
-        <p class="text-gray-400 text-sm mt-4">Tenang. Kami siapkan semuanya dari struktur halaman sampai copywritingnya. Kamu tinggal terima chat masuk dan fokus melayani pelanggan saja.</p>
+        <p class="text-gray-400 text-sm mt-5 leading-relaxed italic border-l-2 border-blue-600 pl-4">"Tenang, serahkan pada kami. Kami siapkan semuanya, Anda cukup terima chat masuk saja."</p>
       </details>
 
-      <details class="group border border-white/10 rounded-2xl p-6 transition-all duration-300 bg-white/5 open:bg-white/10">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
+      <details class="group bg-slate-900/50 border border-white/5 rounded-[2rem] p-8 cursor-pointer transition-all">
+        <summary class="font-bold flex justify-between items-center list-none">
           ❓ “Apakah cocok untuk semua bisnis?”
-          <span class="group-open:rotate-180 transition-transform">▼</span>
+          <span class="text-blue-500 group-open:rotate-180 transition-transform">▼</span>
         </summary>
-        <p class="text-gray-400 text-sm mt-4">Sangat cocok! Landing page kami sudah teruji untuk UMKM jasa, produk fisik, reseller, dropshipper, hingga personal brand yang ingin closing via WhatsApp.</p>
-      </details>
-
-      <details class="group border border-white/10 rounded-2xl p-6 transition-all duration-300 bg-white/5 open:bg-white/10">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">
-          ❓ “Berapa lama pengerjaannya?”
-          <span class="group-open:rotate-180 transition-transform">▼</span>
-        </summary>
-        <p class="text-gray-400 text-sm mt-4">Rata-rata selesai dalam 3–7 hari kerja setelah data kami terima lengkap. Kami mengutamakan kualitas visual dan copywriting.</p>
+        <p class="text-gray-400 text-sm mt-5 leading-relaxed italic border-l-2 border-blue-600 pl-4">"Sangat cocok untuk produk fisik, jasa, reseller, hingga properti yang transaksinya lewat WhatsApp."</p>
       </details>
     </div>
   </div>
 </section>
 
-<section class="py-24 bg-gradient-to-r from-blue-700 to-blue-900 text-center px-6">
-  <h2 class="text-4xl font-extrabold mb-6">Siap Tambah Pelanggan Lewat WhatsApp?</h2>
-  <p class="text-xl mb-10 text-blue-100">Yuk mulai bangun mesin closing untuk bisnis kamu sekarang.</p>
-  <a onclick="trackWA('Bottom CTA')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20siap%20punya%20landing%20page%20closing" target="_blank"
-     class="bg-white text-blue-700 px-12 py-5 rounded-full font-extrabold text-xl shadow-2xl hover:bg-gray-100 transition-all btn-pulse">
-    Chat Dulu, Lihat Cocok atau Tidak
-  </a>
+<section class="py-20 md:py-32 px-6">
+  <div class="max-w-5xl mx-auto rounded-[3.5rem] bg-gradient-to-br from-blue-700 to-blue-900 p-12 md:p-24 text-center shadow-2xl relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+      <svg width="100%" height="100%"><rect width="100%" height="100%" fill="url(#grid)" /></svg>
+    </div>
+    <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">Siap Tambah Pelanggan <br class="hidden md:block"> Lewat WhatsApp?</h2>
+    <p class="text-lg text-blue-100 mb-12">Jangan biarkan kompetitor mencuri calon pembeli Anda.</p>
+    <a onclick="trackWA('Footer')" href="https://wa.me/6281226816221" target="_blank"
+       class="bg-white text-blue-700 px-12 py-5 rounded-[2rem] font-black text-lg md:text-xl shadow-2xl hover:bg-gray-100 transition-all btn-pulse inline-block">
+      Chat Dulu, Lihat Cocok atau Tidak
+    </a>
+  </div>
 </section>
 
-<a id="floating-wa" onclick="trackWA('Floating Button')" href="https://wa.me/6281226816221?text=Halo%20ClosingLabs,%20saya%20mau%20konsultasi..."
+<a id="floating-wa" onclick="trackWA('Floating')" href="https://wa.me/6281226816221"
    target="_blank"
-   class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 translate-y-32 transition-all duration-500 opacity-0 btn-pulse">
+   class="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 translate-y-32 transition-all duration-700 opacity-0 btn-pulse">
    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-8">
 </a>
 
-<footer class="py-10 text-center text-gray-600 text-sm border-t border-white/5">
-  &copy; 2024 ClosingLabs. Semua Hak Dilindungi.
+<footer class="py-10 text-center text-gray-600 text-[10px] md:text-xs border-t border-white/5 tracking-widest">
+  &copy; 2024 CLOSINGLABS. BUILT FOR CONVERSION.
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({ duration: 1000, once: true });
 
-  // Floating WA Visibility (Trigger at 30% scroll)
+  // Floating WA Visibility Logic
   const floatingWA = document.getElementById('floating-wa');
   window.addEventListener('scroll', () => {
     const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
@@ -245,17 +301,14 @@
       floatingWA.classList.remove('translate-y-0', 'opacity-100');
     }
 
-    // Sticky Navbar shadow
+    // Navbar Shadow on Scroll
     const nav = document.getElementById('navbar');
-    if (window.scrollY > 50) nav.classList.add('shadow-2xl', 'bg-black/90');
-    else nav.classList.remove('shadow-2xl', 'bg-black/90');
+    if (window.scrollY > 20) nav.classList.add('bg-black/90', 'py-3');
+    else nav.classList.remove('bg-black/90', 'py-3');
   });
 
-  // Tracking Function (Bukti ke Klien)
-  function trackWA(location) {
-    // Di sini kamu bisa kirim data ke Google Analytics atau Facebook Pixel
-    console.log(`[DATA TRACKING] WhatsApp Clicked from: ${location}`);
-    // alert(`Tracking: Chat via ${location} terpantau!`); // Hanya untuk testing
+  function trackWA(loc) {
+    console.log(`[CLICK_TRACK] WhatsApp Button triggered at: ${loc}`);
   }
 </script>
 
